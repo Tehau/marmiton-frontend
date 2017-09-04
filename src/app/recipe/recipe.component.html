@@ -1,0 +1,18 @@
+<h1 class="text-center">
+	{{recipe.title}}
+</h1>
+<div class="row">
+	<div class="col-xs-12">
+		Pour {{recipe.portion}} personne
+	</div>
+	<div class="col-xs-8">
+		<h2 class="text-center">Description</h2>
+		{{recipe.description}}
+	</div>
+	<div class="col-xs-4">
+		<h2 class="text-center">Ingrédients</h2>
+		<div *ngFor="let ingredient of recipe.ingredients">
+			{{ingredient.name}} {{ingredient.quantity * (recipe?.portion/initialPortion)}} {{ingredient.unity}}
+		</div>
+	</div>
+</div>
